@@ -164,6 +164,27 @@ document.addEventListener("DOMContentLoaded", () =>
   noResultsMessage.style.display = "none";
   vehicleList.appendChild(noResultsMessage);
 
+  const resetFilters = () => 
+  { 
+    document.getElementById("minYear").value = ""; 
+    document.getElementById("maxYear").value = ""; 
+    document.getElementById("make").selectedIndex = -1; 
+    document.getElementById("maxMileage").value = ""; 
+    document.getElementById("minPrice").value = ""; 
+    document.getElementById("maxPrice").value = ""; 
+    document.getElementById("color").selectedIndex = -1; displayAllCars(); 
+  };
+
+  const displayAllCars = () => 
+  { 
+    const vehicleCards = document.querySelectorAll(".vehicle-card"); 
+    vehicleCards.forEach(card => 
+    { 
+      card.style.display = "block"; 
+    }); 
+    noResultsMessage.style.display = "none"; 
+  };
+
   document.getElementById("filter-button").addEventListener("click", () => 
     {
       const minYear = document.getElementById("minYear").value;
@@ -213,7 +234,7 @@ document.addEventListener("DOMContentLoaded", () =>
       else 
       {
         noResultsMessage.style.display = "none";
-      }
-    }
+      }}
   );
+  document.getElementById("clear-filters-button").addEventListener("click", resetFilters);
 });
