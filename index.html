@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Used Car Sales</title>
+    <link rel="stylesheet" href="./css/stylesheet.css">
+</head>
+
+<body>
+    <header>
+        <h1>Used Car Sales</h1>
+    </header>
+    
+    <section id = "filter-section">
+        <form id = filter-form>
+        <label for = "minYear">Min. Year</label>
+        <input type = "number" id = "minYear" name = "minYear" min = "2005" max = "2024">
+
+        <label for = "maxYear">Max. Year</label> 
+        <input type = "number" id = "maxYear" name = "maxYear" min = "2005" max = "2024">
+
+        <label for = "make">Make</label> 
+        
+    <select id = "make" name="make" multiple> 
+        <option value = "Toyota">Toyota</option> 
+        <option value = "Honda">Honda</option> 
+        <option value = "Ford">Ford</option> 
+        <option value = "Nissan">Nissan</option> 
+        <option value = "Chevrolet">Chevrolet</option>
+        <option value = "Volkswagen">Volkswagen</option>
+        <option value = "Hyundai">Hyundai</option>
+        <option value = "Subaru">Subaru</option>
+        <option value = "Mazda">Mazda</option>
+        <option value = "Kia">Kia</option>
+        <option value = "Dodge">Dodge</option>
+        <option value = "Cadillac">Cadillac</option>
+        <option value = "Jaguar">Jaguar</option>
+        <option value = "Tesla">Tesla</option>
+        <option value = "Porsche">Porsche</option>
+        <option value = "Lexus">Lexus</option>
+        <option value = "BMW">BMW</option>
+    </select>
+    
+    <label for ="maxMileage">Max. Mileage</label> 
+    <input type ="number" id ="maxMileage" name ="maxMileage"> 
+    
+    <label for ="minPrice">Min. Price</label> 
+    <input type ="number" id ="minPrice" name ="minPrice"> 
+    
+    <label for ="maxPrice">Max. Price</label> 
+    <input type ="number" id ="maxPrice" name ="maxPrice"> 
+    
+    <label for ="color">Color</label> 
+    <select id ="color" name ="color" multiple> 
+        <option value="Silver">Silver</option> 
+        <option value="White">White</option> 
+        <option value="Black">Black</option> 
+        <option value="Blue">Blue</option> 
+        <option value="Red">Red</option> 
+        <option value="Gray">Gray</option> 
+        <option value="Green">Green</option> </select>
+    
+        <button type="button" id="filter-button">Filter</button> 
+    </form>
+    </section>
+
+    <section id = "vehicle-list">
+          <div class = "vehicle-card" data-year = "2018" data-make = "Toyota" data-mileage = "30000" data-price = "18000" data-color = "Silver">
+            <img src = "./assets/images/Toyota Camry 2018.jpg" alt ="Toyota Camry">
+            <h2>Toyota Camry</h2>
+            <p>Year: 2018</p>
+            <p>Mileage: 30,000 miles</p>
+            <p>Price: $18,000</p>
+            <p>Color: Silver</p>
+            <p>Gas Mileage: 25 mpg city, 35 mpg highway</p>
+          </div>
+
+          <div class = "vehicle-card" data-year ="2016" data-make = "Honda" data-mileage = "45000" data-price = "14000" data-color = "White">
+            <img src ="./assets/images/Honda Civic 2016.jpg" alt ="Honda Civic">
+            <h2>Honda Civic</h2>
+            <p>Year: 2016</p>
+            <p>Mileage: 45,000 miles</p>
+            <p>Price: $14,000</p>
+            <p>Color: White</p>
+            <p>Gas Mileage: 30 mpg city, 40 mpg highway</p>
+          </div>
+
+          <div class = "vehicle-card" data-year = "2017" data-make = "Ford" data-mileage = "35000" data-price = "16000" data-color = "Black">
+            <img src = "./assets/images/ford fusion.jpg" alt ="Ford Fusion">
+            <h2>Ford Fusion</h2>
+            <p>Year: 2017</p>
+            <p>Mileage: 35,000 miles</p>
+            <p>Price: $16,000</p>
+            <p>Color: Black</p>
+            <p>Gas Mileage: 28 mpg city, 38 mpg highway</p>
+          </div>
+
+          <div class = "vehicle-card" data-year = "2019" data-make = "Nissan" data-mileage = "25000" data-price = "17000" data-color = "Blue">
+            <img src ="./assets/images/nissan altima.jpg" alt ="Nissan Altima">
+            <h2>Nissan Altima</h2>
+            <p>Year: 2019</p>
+            <p>Mileage: 25,000 miles</p>
+            <p>Price: $17,000</p>
+            <p>Color: Blue</p>
+            <p>Gas Mileage: 27 mpg city, 36 mpg highway</p>
+          </div>
+
+          <div class = "vehicle-card" data-year = "2015" data-make = "Chevrolet" data-mileage = "50000" data-price = "12000" data-color = "Red">
+            <img src ="./assets/images/chevrolet malibu.jpg" alt ="Chevrolet Malibu">
+            <h2>Chevrolet Malibu</h2>
+            <p>Year: 2015</p>
+            <p>Mileage: 50,000 miles</p>
+            <p>Price: $12,000</p>
+            <p>Color: Red</p>
+            <p>Gas Mileage: 25 mpg city, 37 mpg highway</p>
+          </div>
+
+          <div class ="vehicle-card" data-year ="2016" data-make ="Volkswagen" data-mileage ="40000" data-price ="15000" data-color ="Gray">
+            <img src ="./assets/images/volkswagon 2015.jpg" alt = "Volkswagen Passat">
+            <h2>Volkswagen Passat</h2>
+            <p>Year: 2016</p>
+            <p>Mileage: 40,000 miles</p>
+            <p>Price: $15,000</p>
+            <p>Color: Gray</p>
+            <p>Gas Mileage: 29 mpg city, 40 mpg highway</p>
+          </div>
+
+          <div class = "vehicle-card" data-year = "2020" data-make = "Hyundai" data-mileage = "22000" data-price = "16000" data-color = "Silver">
+            <img src = "./assets/images/hyundai elantra.jpg" alt = "Hyundai Elantra">
+            <h2>Hyundai Elantra</h2>
+            <p>Year: 2020</p>
+            <p>Mileage: 22,000 miles</p>
+            <p>Price: $16,000</p>
+            <p>Color: Silver</p>
+            <p>Gas Mileage: 30 mpg city, 41 mpg highway</p>
+          </div>
+
+          <div class="vehicle-card" data-year="2014" data-make="Subaru" data-mileage="60000" data-price="14000" data-color="Green">
+            <img src="./assets/images/Subaru Outback.jpg" alt="Subaru Outback">
+            <h2>Subaru Outback</h2>
+            <p>Year: 2014</p>
+            <p>Mileage: 60,000 miles</p>
+            <p>Price: $14,000</p>
+            <p>Color: Green</p>
+            <p>Gas Mileage: 22 mpg city, 30 mpg highway</p>
+          </div>
+
+          <div class ="vehicle-card" data-year ="2017" data-make ="Mazda" data-mileage ="32000" data-price ="19000" data-color ="Blue">
+            <img src ="./assets/images/Mazda CX-5.jpg" alt ="Mazda CX-5">
+            <h2>Mazda CX-5</h2>
+            <p>Year: 2017</p>
+            <p>Mileage: 32,000 miles</p>
+            <p>Price: $19,000</p>
+            <p>Color: Blue</p>
+            <p>Gas Mileage: 24 mpg city, 31 mpg highway</p>
+          </div>
+
+          <div class ="vehicle-card" data-year ="2018" data-make ="Kia" data-mileage ="28000" data-price ="17000" data-color ="White">
+            <img src ="./assets/images/Kia Sorento.jpg" alt ="Kia Sorento">
+            <h2>Kia Sorento</h2>
+            <p>Year: 2018</p>
+            <p>Mileage: 28,000 miles</p>
+            <p>Price: $17,000</p>
+            <p>Color: White</p>
+            <p>Gas Mileage: 22 mpg city, 29 mpg highway</p>
+          </div>
+
+          <div class ="vehicle-card" data-year ="2015" data-make ="Dodge" data-mileage ="30000" data-price ="24000" data-color ="Black">
+            <img src ="./assets/images/Dodge Challenger.jpg" alt ="Dodge Challenger">
+            <h2>Dodge Challenger</h2>
+            <p>Year: 2015</p>
+            <p>Mileage: 30,000 miles</p>
+            <p>Price: $24,000</p>
+            <p>Color: Black</p>
+            <p>Gas Mileage: 19 mpg city, 30 mpg highway</p>
+          </div>
+
+          <div class ="vehicle-card" data-year ="2017" data-make ="Cadillac" data-mileage ="28000" data-price ="32000" data-color ="Red">
+            <img src ="./assets/images/Cadillac XT5 2017.jpg" alt ="Cadillac XT5">
+            <h2>Cadillac XT5</h2>
+            <p>Year: 2017</p>
+            <p>Mileage: 28,000 miles</p>
+            <p>Price: $32,000</p>
+            <p>Color: Red</p>
+            <p>Gas Mileage: 19 mpg city, 27 mpg highway</p>
+          </div>
+
+          <div class ="vehicle-card" data-year ="2018" data-make ="Jaguar" data-mileage ="26000" data-price ="38000" data-color ="Blue">
+            <img src ="./assets/images/Jaguar F-PACE 2018.jpg" alt ="Jaguar F-PACE">
+            <h2>Jaguar F-PACE</h2>
+            <p>Year: 2018</p>
+            <p>Mileage: 26,000 miles</p>
+            <p>Price: $38,000</p>
+            <p>Color: Blue</p>
+            <p>Gas Mileage: 18 mpg city, 23 mpg highway</p>
+          </div>
+
+          <div class ="vehicle-card" data-year ="2019" data-make ="Tesla" data-mileage ="18000" data-price ="55000" data-color ="Black">
+            <img src ="./assets/images/Tesla Model S 2019 (Black).jpg" alt ="Tesla Model S">
+            <h2>Tesla Model S</h2>
+            <p>Year: 2019</p>
+            <p>Mileage: 18,000 miles</p>
+            <p>Price: $55,000</p>
+            <p>Color: Black</p>
+            <p>Gas Mileage: Electric (370 miles per charge)</p>
+          </div>
+          
+          <div class ="vehicle-card" data-year ="2020" data-make ="Porsche" data-mileage ="22000" data-price ="68000" data-color ="White">
+            <img src ="./assets/images/Porsche Cayenne 2020.jpg" alt ="Porsche Cayenne">
+            <h2>Porsche Cayenne</h2>
+            <p>Year: 2020</p>
+            <p>Mileage: 22,000 miles</p>
+            <p>Price: $68,000</p>
+            <p>Color: White</p>
+            <p>Gas Mileage: 20 mpg city, 26 mpg highway</p>
+          </div>
+          
+          <div class ="vehicle-card" data-year ="2017" data-make ="Lexus" data-mileage ="29000" data-price ="26000" data-color ="White">
+            <img src ="./assets/images/Lexus ES 2017.jpg" alt ="Lexus ES">
+            <h2>Lexus ES</h2>
+            <p>Year: 2017</p>
+            <p>Mileage: 29,000 miles</p>
+            <p>Price: $26,000</p>
+            <p>Color: White</p>
+            <p>Gas Mileage: 21 mpg city, 30 mpg highway</p>
+          </div>
+          
+          <div class = "vehicle-card" data-year ="2016" data-make ="BMW" data-mileage ="32000" data-price ="27000" data-color ="Black">
+            <img src ="./assets/images/BMW 5 Series 2016.jpg" alt ="BMW 5 Series">
+            <h2>BMW 5 Series</h2>
+            <p>Year: 2016</p>
+            <p>Mileage: 32,000 miles</p>
+            <p>Price: $27,000</p>
+            <p>Color: Black</p>
+            <p>Gas Mileage: 23 mpg city, 34 mpg highway</p>
+          </div>
+    </section>
+    <script src="./js/usedCars.js"></script>
+</body>
+</html>
