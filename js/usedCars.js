@@ -156,43 +156,64 @@ const usedCars = [
   },
 ];
 
-document.addEventListener("DOMContentLoaded", () => {
-  document.getElementById("filter-button").addEventListener("click", () => {
-    const minYear = document.getElementById("minYear").value;
-    const maxYear = document.getElementById("maxYear").value;
-    const selectedMakes = Array.from(document.getElementById("make").selectedOptions).map(option => option.value);
-    const maxMileage = document.getElementById("maxMileage").value;
-    const minPrice = document.getElementById("minPrice").value;
-    const maxPrice = document.getElementById("maxPrice").value;
-    const selectedColors = Array.from(document.getElementById("color").selectedOptions).map(option => option.value);
-    const vehicleCards = document.querySelectorAll(".vehicle-card");
+document.addEventListener("DOMContentLoaded", () => 
+{
+  const vehicleList = document.getElementById("vehicle-list");
+  const noResultsMessage = document.createElement("p");
+  noResultsMessage.textContent = "No cars match your criteria. Please try again.";
+  noResultsMessage.style.display = "none";
+  vehicleList.appendChild(noResultsMessage);
 
-    let hasMatches = false;
+  document.getElementById("filter-button").addEventListener("click", () => 
+    {
+      const minYear = document.getElementById("minYear").value;
+      const maxYear = document.getElementById("maxYear").value;
+      const selectedMakes = Array.from(document.getElementById("make").selectedOptions).map(option => option.value);
+      const maxMileage = document.getElementById("maxMileage").value;
+      const minPrice = document.getElementById("minPrice").value;
+      const maxPrice = document.getElementById("maxPrice").value;
+      const selectedColors = Array.from(document.getElementById("color").selectedOptions).map(option => option.value);
+      const vehicleCards = document.querySelectorAll(".vehicle-card");
 
-    vehicleCards.forEach(card => {
-      const year = parseInt(card.getAttribute("data-year"));
-      const make = card.getAttribute("data-make");
-      const mileage = parseInt(card.getAttribute("data-mileage"));
-      const price = parseInt(card.getAttribute("data-price"));
-      const color = card.getAttribute("data-color");
+      let hasMatches = false;
 
-      const yearMatch = (!minYear || year >= minYear) && (!maxYear || year <= maxYear);
-      const makeMatch = selectedMakes.length === 0 || selectedMakes.includes(make);
-      const mileageMatch = !maxMileage || mileage <= maxMileage;
-      const priceMatch = (!minPrice || price >= minPrice) && (!maxPrice || price <= maxPrice);
-      const colorMatch = selectedColors.length === 0 || selectedColors.includes(color);
-
-      if (yearMatch && makeMatch && mileageMatch && priceMatch && colorMatch) {
+      vehicleCards.forEach(card => 
+      {
         card.style.display = "block";
-        hasMatches = true;
-      } else {
-        card.style.display = "none";
-      }
-    });
+      });
 
-    if (!hasMatches) {
-      const vehicleList = document.getElementById("vehicle-list");
-      vehicleList.innerHTML = "<p>No cars match your criteria. Please try again.</p>";
+      vehicleCards.forEach(card => 
+      {
+        const year = parseInt(card.getAttribute("data-year"));
+        const make = card.getAttribute("data-make");
+        const mileage = parseInt(card.getAttribute("data-mileage"));
+        const price = parseInt(card.getAttribute("data-price"));
+        const color = card.getAttribute("data-color");
+
+        const yearMatch = (!minYear || year >= minYear) && (!maxYear || year <= maxYear);
+        const makeMatch = selectedMakes.length === 0 || selectedMakes.includes(make);
+        const mileageMatch = !maxMileage || mileage <= maxMileage;
+        const priceMatch = (!minPrice || price >= minPrice) && (!maxPrice || price <= maxPrice);
+        const colorMatch = selectedColors.length === 0 || selectedColors.includes(color);
+
+        if (yearMatch && makeMatch && mileageMatch && priceMatch && colorMatch) 
+        {
+          card.style.display = "block";
+          hasMatches = true;
+        } else 
+        {
+        card.style.display = "none";
+        }
+      });
+
+      if (!hasMatches) 
+      {
+        noResultsMessage.style.display = "block";
+      } 
+      else 
+      {
+        noResultsMessage.style.display = "none";
+      }
     }
-  });
+  );
 });
